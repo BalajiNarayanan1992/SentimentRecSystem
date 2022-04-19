@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sentiment Based Recommender System</title>
+    </head>
+    <body>
+        <h2><center>Enter the UserName to get the recommendation</h2>
+        <div>
+            <form method="POST"><center>
+                <p><label>User Name: </label>
+                <input type="text" id="username" name="username">
+                <input type="submit" name="submit" value="submit"/></p>
+            </form>
+        </div>
+        <div class="info">
+            <h3><center>{{info}}</h3>
+        </div>
+        <center><table>
+            <tr>
+                {% for header in headings %}
+                    <th><b>{{header}}</b></th>
+                {% endfor %}
+            </tr>
+            {% for entry in data %}
+            <tr>
+                {% for cell in entry %}
+                    <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
